@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="ListRowViewController">
+            <connections>
+                <outlet property="editButton" destination="vmd-LL-kN7" id="XqT-yI-stO"/>
+                <outlet property="outputView" destination="uU1-7d-p6h" id="uCv-j7-UIA"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="yog-AM-u9s"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY" userLabel="List Item View">
+            <rect key="frame" x="0.0" y="0.0" width="266" height="31"/>
+            <subviews>
+                <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DqU-bT-PYy" userLabel="Output Field">
+                    <rect key="frame" x="-2" y="0.0" width="177" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="173" id="4oG-yU-3d5"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="AYa-dn-812"/>
+                    </constraints>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" placeholderString="" id="J4j-pX-hd4" userLabel="Output Cell">
+                        <font key="font" size="7" name="Menlo-Regular"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.representedObject.unescapedOutput" id="zmr-fB-CLu"/>
+                    </connections>
+                </textField>
+                <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="q9k-hz-yg9" userLabel="Progress View">
+                    <rect key="frame" x="0.0" y="8" width="16" height="16"/>
+                    <connections>
+                        <binding destination="-2" name="animate" keyPath="representedObject.running" id="Alt-1H-Jjg">
+                            <dictionary key="options">
+                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </progressIndicator>
+                <imageView translatesAutoresizingMaskIntoConstraints="NO" id="8gs-d1-WuT" userLabel="Stopped View">
+                    <rect key="frame" x="2" y="10" width="12" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="Rvr-8y-uDX"/>
+                        <constraint firstAttribute="width" constant="12" id="huW-m8-zEP"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSStatusPartiallyAvailable" id="Evm-gX-bb1"/>
+                    <connections>
+                        <binding destination="-2" name="hidden3" keyPath="representedObject.running" previousBinding="VYp-6y-9dH" id="SL8-Cp-EUc">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="hidden2" keyPath="representedObject.showStatus" previousBinding="5a5-GO-fXA" id="VYp-6y-9dH">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="hidden" keyPath="representedObject.status" id="5a5-GO-fXA">
+                            <dictionary key="options">
+                                <integer key="NSNullPlaceholder" value="0"/>
+                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </imageView>
+                <imageView translatesAutoresizingMaskIntoConstraints="NO" id="DcK-US-Y7c" userLabel="Failure View">
+                    <rect key="frame" x="2" y="10" width="12" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="12" id="KiL-Mi-I2A"/>
+                        <constraint firstAttribute="height" constant="12" id="ozW-gP-bgw"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSStatusUnavailable" id="KRf-js-5mY" userLabel="Failure Cell"/>
+                    <connections>
+                        <binding destination="-2" name="hidden3" keyPath="representedObject.running" previousBinding="lma-N8-GIA" id="G48-5y-dm9">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="hidden2" keyPath="representedObject.showStatus" previousBinding="tLZ-fA-ZJP" id="lma-N8-GIA">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="hidden" keyPath="representedObject.status" id="tLZ-fA-ZJP">
+                            <dictionary key="options">
+                                <integer key="NSNullPlaceholder" value="1"/>
+                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </imageView>
+                <imageView translatesAutoresizingMaskIntoConstraints="NO" id="ujW-FR-oxR" userLabel="Success View">
+                    <rect key="frame" x="2" y="10" width="12" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="12" id="lEn-yZ-4tX"/>
+                        <constraint firstAttribute="height" constant="12" id="sGr-6n-qLy"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSStatusAvailable" id="Ubc-Vb-LAb" userLabel="Success Cell"/>
+                    <connections>
+                        <binding destination="-2" name="hidden3" keyPath="representedObject.running" previousBinding="nCa-Pt-Buo" id="HkU-Oa-dOI">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="hidden2" keyPath="representedObject.showStatus" previousBinding="7Fs-Mc-Q1G" id="nCa-Pt-Buo">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                <integer key="NSNullPlaceholder" value="-1"/>
+                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                            </dictionary>
+                        </binding>
+                        <binding destination="-2" name="hidden" keyPath="representedObject.status" id="7Fs-Mc-Q1G">
+                            <dictionary key="options">
+                                <integer key="NSNullPlaceholder" value="1"/>
+                                <bool key="NSRaisesForNotApplicableKeys" value="NO"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </imageView>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="U7F-Hl-Qzm" userLabel="Label Button">
+                    <rect key="frame" x="17" y="9" width="43" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="QyF-Wz-Bm6"/>
+                    </constraints>
+                    <buttonCell key="cell" type="inline" title="Label" bezelStyle="inline" alignment="center" inset="2" id="u1I-BO-Xx7">
+                        <behavior key="behavior" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystemBold"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="startOrStop:" target="-2" id="Sbd-pV-Vb3"/>
+                        <binding destination="-2" name="title" keyPath="representedObject.label" id="Eeq-2t-eRs"/>
+                    </connections>
+                </button>
+                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQA-xG-ni4" userLabel="Output Scroll">
+                    <rect key="frame" x="17" y="-10" width="256" height="16"/>
+                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="war-YV-W7W" userLabel="Output Clip">
+                        <rect key="frame" x="1" y="1" width="223" height="133"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView focusRingType="none" verticalCompressionResistancePriority="749" editable="NO" selectable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" id="uU1-7d-p6h" userLabel="Output View">
+                                <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="minSize" width="256" height="16"/>
+                                <size key="maxSize" width="463" height="10000000"/>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <size key="minSize" width="256" height="16"/>
+                                <size key="maxSize" width="463" height="10000000"/>
+                                <connections>
+                                    <binding destination="-2" name="attributedString" keyPath="representedObject.attributedOutput" id="qar-ix-3dl"/>
+                                    <outlet property="delegate" destination="-2" id="Oop-el-HJe"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </clipView>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="256" id="ZEd-2N-132"/>
+                    </constraints>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="ydT-VY-1LJ">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="h4h-V6-n4r">
+                        <rect key="frame" x="224" y="1" width="15" height="133"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="vmd-LL-kN7" userLabel="Edit Button">
+                    <rect key="frame" x="257" y="7" width="9" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="9" id="8JI-Ko-wYQ"/>
+                    </constraints>
+                    <buttonCell key="cell" type="inline" title="Edit" bezelStyle="inline" image="NSSmartBadgeTemplate" imagePosition="only" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="HXH-EV-ooF">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="smallSystemBold"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="edit:" target="-2" id="eIS-34-cOA"/>
+                        <binding destination="-2" name="hidden" keyPath="self.parentViewController.editing" id="9B0-9N-3kd"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="DqU-bT-PYy" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="1pA-WW-UCS"/>
+                <constraint firstItem="vmd-LL-kN7" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="257" id="4dv-Gw-VLT"/>
+                <constraint firstItem="q9k-hz-yg9" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="7" id="8su-ML-sis"/>
+                <constraint firstItem="mQA-xG-ni4" firstAttribute="top" secondItem="U7F-Hl-Qzm" secondAttribute="bottom" constant="3" id="AcR-pj-FOo"/>
+                <constraint firstItem="mQA-xG-ni4" firstAttribute="height" secondItem="DqU-bT-PYy" secondAttribute="height" id="ByQ-Pd-qdq"/>
+                <constraint firstItem="q9k-hz-yg9" firstAttribute="centerX" secondItem="ujW-FR-oxR" secondAttribute="centerX" id="CA3-Ub-PaB"/>
+                <constraint firstAttribute="bottom" secondItem="DqU-bT-PYy" secondAttribute="bottom" id="Ku8-75-uez"/>
+                <constraint firstItem="q9k-hz-yg9" firstAttribute="centerY" secondItem="8gs-d1-WuT" secondAttribute="centerY" id="U3m-5r-1pM"/>
+                <constraint firstItem="mQA-xG-ni4" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="17" id="VhH-bc-g81"/>
+                <constraint firstItem="U7F-Hl-Qzm" firstAttribute="centerY" secondItem="vmd-LL-kN7" secondAttribute="centerY" id="VlI-hL-vmw"/>
+                <constraint firstItem="q9k-hz-yg9" firstAttribute="centerX" secondItem="8gs-d1-WuT" secondAttribute="centerX" id="WBg-at-0L3"/>
+                <constraint firstItem="U7F-Hl-Qzm" firstAttribute="leading" secondItem="q9k-hz-yg9" secondAttribute="trailing" constant="1" id="XJc-oO-yUv"/>
+                <constraint firstItem="DqU-bT-PYy" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="15" id="eCF-Dt-Wu5"/>
+                <constraint firstItem="q9k-hz-yg9" firstAttribute="centerY" secondItem="ujW-FR-oxR" secondAttribute="centerY" id="gLc-Ep-k2m"/>
+                <constraint firstItem="q9k-hz-yg9" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="q8I-Ev-NjI"/>
+                <constraint firstItem="U7F-Hl-Qzm" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="8" id="r2O-d7-pVA"/>
+                <constraint firstItem="q9k-hz-yg9" firstAttribute="centerY" secondItem="DcK-US-Y7c" secondAttribute="centerY" id="vmE-Va-egP"/>
+                <constraint firstItem="q9k-hz-yg9" firstAttribute="centerX" secondItem="DcK-US-Y7c" secondAttribute="centerX" id="yzP-za-8ju"/>
+            </constraints>
+            <point key="canvasLocation" x="191" y="345.5"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="62Q-bz-bUL"/>
+    </objects>
+    <resources>
+        <image name="NSSmartBadgeTemplate" width="14" height="14"/>
+        <image name="NSStatusAvailable" width="16" height="16"/>
+        <image name="NSStatusPartiallyAvailable" width="16" height="16"/>
+        <image name="NSStatusUnavailable" width="16" height="16"/>
+    </resources>
+</document>

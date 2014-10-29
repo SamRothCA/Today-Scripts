@@ -1,0 +1,4 @@
+/* Display name and description for this extension. */
+"CFBundleDisplayName" = "Scripts";
+"com.apple.notificationcenter.widget.description" = "Observe the results of scripts run when checking Notification Center";
+
