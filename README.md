@@ -2,6 +2,8 @@
 
 A widget for running scripts in the Today View in OS X Yosemite's Notification Center.
 
+[**Download the latest build here.**](https://github.com/SamRothCA/Today-Scripts/raw/master/Today%20Scripts.dmg)
+
 ##Features
 
 * [Colorized Output](http://i.imgur.com/Yvj2ePG.png). Today Scripts supports colorized terminal output from your scripts, as well as bold and underline.
