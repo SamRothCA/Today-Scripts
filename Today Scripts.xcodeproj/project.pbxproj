@@ -28,6 +28,7 @@
 		2265B37819FC51DF000802FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2265B37719FC51DF000802FB /* Images.xcassets */; };
 		2265CC7319F89D18000802FB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2265CC7219F89D18000802FB /* MainMenu.xib */; };
 		2265CC7619F89D86000802FB /* XPC.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 223F9A4A19F89532000802FB /* XPC.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2287A09D1A00B294000802FB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2287A09C1A00B294000802FB /* README.md */; };
 		22A1BFCD1A004D8C000802FB /* Icon Credit.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22A1BFCC1A004D8C000802FB /* Icon Credit.txt */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +125,7 @@
 		2265B37719FC51DF000802FB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2265B37A19FC53CA000802FB /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		2265CC7219F89D18000802FB /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		2287A09C1A00B294000802FB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Widget/README.md; sourceTree = "<group>"; };
 		22A1BFCC1A004D8C000802FB /* Icon Credit.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Icon Credit.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +158,7 @@
 		223F99FA19F894AE000802FB = {
 			isa = PBXGroup;
 			children = (
+				2287A09C1A00B294000802FB /* README.md */,
 				223F9A5B19F895AF000802FB /* TodayScripts.h */,
 				223F9A5C19F895AF000802FB /* TodayScripts.m */,
 				223F9A0519F894AE000802FB /* Today Scripts */,
@@ -420,6 +423,7 @@
 				223F9A7219F8963C000802FB /* TodayViewController.m in Sources */,
 				223F9A6C19F8963C000802FB /* AMR_ANSIEscapeHelper.m in Sources */,
 				223F9A5D19F895AF000802FB /* TodayScripts.m in Sources */,
+				2287A09D1A00B294000802FB /* README.md in Sources */,
 				223F9A6D19F8963C000802FB /* ListRowViewController.m in Sources */,
 				223F9A6F19F8963C000802FB /* EditViewController.m in Sources */,
 				223F9A7119F8963C000802FB /* TodayScript.m in Sources */,
