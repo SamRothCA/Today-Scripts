@@ -1,5 +1,5 @@
 //
-//  ScriptsArray.m
+//  TodayScripts.m
 //  Today Scripts
 //
 //  Created by Sam Rothenberg on 8/14/14.
