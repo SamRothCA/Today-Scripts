@@ -20,7 +20,7 @@ After building, simply copy "Today Scripts.app" wherever you'd like to store it,
 
 To begin editing your list of scripts, click the "Info" symbol in the title of the widget.
 
-To run a script on command, click its label in your list.
+To start or stop a given script on demand, click its label in your list.
 
 To edit an existing script, click the "action" button to the right of its label.
 
