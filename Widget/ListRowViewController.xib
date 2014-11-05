@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
@@ -7,22 +7,23 @@
         <customObject id="-2" userLabel="File's Owner" customClass="ListRowViewController">
             <connections>
                 <outlet property="editButton" destination="vmd-LL-kN7" id="XqT-yI-stO"/>
+                <outlet property="labelButton" destination="U7F-Hl-Qzm" id="Ivo-08-zQ6"/>
                 <outlet property="outputView" destination="uU1-7d-p6h" id="uCv-j7-UIA"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="yog-AM-u9s"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY" userLabel="List Item View">
+        <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY" userLabel="List Row View">
             <rect key="frame" x="0.0" y="0.0" width="266" height="31"/>
             <subviews>
-                <textField hidden="YES" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DqU-bT-PYy" userLabel="Output Field">
+                <textField hidden="YES" focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DqU-bT-PYy" userLabel="Output Field">
                     <rect key="frame" x="-2" y="0.0" width="177" height="16"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="173" id="4oG-yU-3d5"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="AYa-dn-812"/>
                     </constraints>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" placeholderString="" id="J4j-pX-hd4" userLabel="Output Cell">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="" id="J4j-pX-hd4" userLabel="Output Cell">
                         <font key="font" size="7" name="Menlo-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -141,27 +142,13 @@
                         </binding>
                     </connections>
                 </imageView>
-                <button translatesAutoresizingMaskIntoConstraints="NO" id="U7F-Hl-Qzm" userLabel="Label Button">
-                    <rect key="frame" x="17" y="9" width="43" height="14"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="14" id="QyF-Wz-Bm6"/>
-                    </constraints>
-                    <buttonCell key="cell" type="inline" title="Label" bezelStyle="inline" alignment="center" inset="2" id="u1I-BO-Xx7">
-                        <behavior key="behavior" lightByContents="YES"/>
-                        <font key="font" metaFont="smallSystemBold"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="startOrStop:" target="-2" id="Sbd-pV-Vb3"/>
-                        <binding destination="-2" name="title" keyPath="representedObject.label" id="Eeq-2t-eRs"/>
-                    </connections>
-                </button>
-                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQA-xG-ni4" userLabel="Output Scroll">
+                <scrollView focusRingType="none" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQA-xG-ni4" userLabel="Output Scroll">
                     <rect key="frame" x="17" y="-10" width="256" height="16"/>
-                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="war-YV-W7W" userLabel="Output Clip">
+                    <clipView key="contentView" focusRingType="none" drawsBackground="NO" copiesOnScroll="NO" id="war-YV-W7W" userLabel="Output Clip">
                         <rect key="frame" x="1" y="1" width="223" height="133"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView focusRingType="none" verticalCompressionResistancePriority="749" editable="NO" selectable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" id="uU1-7d-p6h" userLabel="Output View">
+                            <textView focusRingType="none" verticalCompressionResistancePriority="749" editable="NO" selectable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" id="uU1-7d-p6h" userLabel="Output View" customClass="ListRowOutputView">
                                 <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -172,7 +159,8 @@
                                 <size key="maxSize" width="463" height="10000000"/>
                                 <connections>
                                     <binding destination="-2" name="attributedString" keyPath="representedObject.attributedOutput" id="qar-ix-3dl"/>
-                                    <outlet property="delegate" destination="-2" id="Oop-el-HJe"/>
+                                    <outlet property="delegate" destination="-2" id="IQW-l4-K04"/>
+                                    <outlet property="listRowViewController" destination="-2" id="bCD-Ng-wB4"/>
                                 </connections>
                             </textView>
                         </subviews>
@@ -190,7 +178,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <button translatesAutoresizingMaskIntoConstraints="NO" id="vmd-LL-kN7" userLabel="Edit Button">
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="vmd-LL-kN7" userLabel="Edit Button" customClass="ListRowEditButton">
                     <rect key="frame" x="257" y="7" width="9" height="18"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="9" id="8JI-Ko-wYQ"/>
@@ -202,6 +190,23 @@
                     <connections>
                         <action selector="edit:" target="-2" id="eIS-34-cOA"/>
                         <binding destination="-2" name="hidden" keyPath="self.parentViewController.editing" id="9B0-9N-3kd"/>
+                        <outlet property="listRowViewController" destination="-2" id="AJs-Av-hL0"/>
+                    </connections>
+                </button>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="U7F-Hl-Qzm" userLabel="Label Button" customClass="ListRowLabelButton">
+                    <rect key="frame" x="20" y="9" width="43" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="QyF-Wz-Bm6"/>
+                    </constraints>
+                    <buttonCell key="cell" type="inline" title="Label" bezelStyle="inline" image="24B9140B-1436-4FD0-8D2D-1B6E3F1C1374" alignment="center" inset="2" id="u1I-BO-Xx7">
+                        <behavior key="behavior" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystemBold"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="startOrStop:" target="-2" id="Sbd-pV-Vb3"/>
+                        <binding destination="-2" name="title" keyPath="representedObject.label" id="Eeq-2t-eRs"/>
+                        <outlet property="listRowViewController" destination="-2" id="KAL-uk-GMV"/>
+                        <outlet property="nextKeyView" destination="vmd-LL-kN7" id="Xhh-i3-yEl"/>
                     </connections>
                 </button>
             </subviews>
@@ -217,7 +222,7 @@
                 <constraint firstItem="mQA-xG-ni4" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="17" id="VhH-bc-g81"/>
                 <constraint firstItem="U7F-Hl-Qzm" firstAttribute="centerY" secondItem="vmd-LL-kN7" secondAttribute="centerY" id="VlI-hL-vmw"/>
                 <constraint firstItem="q9k-hz-yg9" firstAttribute="centerX" secondItem="8gs-d1-WuT" secondAttribute="centerX" id="WBg-at-0L3"/>
-                <constraint firstItem="U7F-Hl-Qzm" firstAttribute="leading" secondItem="q9k-hz-yg9" secondAttribute="trailing" constant="1" id="XJc-oO-yUv"/>
+                <constraint firstItem="U7F-Hl-Qzm" firstAttribute="leading" secondItem="q9k-hz-yg9" secondAttribute="trailing" constant="4" id="XJc-oO-yUv"/>
                 <constraint firstItem="DqU-bT-PYy" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="15" id="eCF-Dt-Wu5"/>
                 <constraint firstItem="q9k-hz-yg9" firstAttribute="centerY" secondItem="ujW-FR-oxR" secondAttribute="centerY" id="gLc-Ep-k2m"/>
                 <constraint firstItem="q9k-hz-yg9" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="q8I-Ev-NjI"/>
@@ -230,6 +235,57 @@
         <userDefaultsController representsSharedInstance="YES" id="62Q-bz-bUL"/>
     </objects>
     <resources>
+        <image name="24B9140B-1436-4FD0-8D2D-1B6E3F1C1374" width="1" height="1">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
+GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
+c1dOU0NvbG9ygAKADRIgwwAAgAOAC1Z7MSwgMX3SFQoWGFpOUy5vYmplY3RzoReABIAK0hUKGh2iGxyA
+BYAGgAkQANIgCiEiXxAUTlNUSUZGUmVwcmVzZW50YXRpb26AB4AITxEIdE1NACoAAAAKAAAADgEAAAMA
+AAABAAEAAAEBAAMAAAABAAEAAAECAAMAAAACAAgACAEDAAMAAAABAAEAAAEGAAMAAAABAAEAAAERAAQA
+AAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAIAAAEWAAMAAAABAAEAAAEXAAQAAAABAAAAAgEcAAMA
+AAABAAEAAAFSAAMAAAABAAEAAAFTAAMAAAACAAEAAYdzAAcAAAe8AAAAuAAAAAAAAAe8YXBwbAIgAABt
+bnRyR1JBWVhZWiAH0AACAA4ADAAAAABhY3NwQVBQTAAAAABub25lAAAAAAAAAAAAAAAAAAAAAAAA9tYA
+AQAAAADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVk
+ZXNjAAAAwAAAAG9kc2NtAAABMAAABi5jcHJ0AAAHYAAAADh3dHB0AAAHmAAAABRrVFJDAAAHrAAAAA5k
+ZXNjAAAAAAAAABVHZW5lcmljIEdyYXkgUHJvZmlsZQAAAAAAAAAAAAAAFUdlbmVyaWMgR3JheSBQcm9m
+aWxlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbWx1YwAAAAAA
+AAAeAAAADHNrU0sAAAAqAAABeGRhREsAAAA0AAABomNhRVMAAAAsAAAB1nB0QlIAAAAqAAACAnVrVUEA
+AAAsAAACLGZyRlUAAAAqAAACWGh1SFUAAAAuAAACgnpoVFcAAAAQAAACsG5iTk8AAAAsAAACwGNzQ1oA
+AAAkAAAC7GhlSUwAAAAgAAADEGl0SVQAAAAuAAADMHJvUk8AAAAkAAADXmRlREUAAAA6AAADgmtvS1IA
+AAAYAAADvHN2U0UAAAAuAAAD1HpoQ04AAAAQAAAEAmphSlAAAAAWAAAEEmVsR1IAAAAkAAAEKHB0UE8A
+AAA4AAAETG5sTkwAAAAqAAAEhGVzRVMAAAAoAAAErnRoVEgAAAAkAAAE1nRyVFIAAAAiAAAE+mZpRkkA
+AAAsAAAFHGhySFIAAAA6AAAFSHBsUEwAAAA2AAAFgnJ1UlUAAAAmAAAFuGFyRUcAAAAoAAAF3mVuVVMA
+AAAoAAAGBgBWAWEAZQBvAGIAZQBjAG4A/QAgAHMAaQB2AP0AIABwAHIAbwBmAGkAbABHAGUAbgBlAHIA
+ZQBsACAAZwByAOUAdABvAG4AZQBiAGUAcwBrAHIAaQB2AGUAbABzAGUAUABlAHIAZgBpAGwAIABkAGUA
+IABnAHIAaQBzACAAZwBlAG4A6AByAGkAYwBQAGUAcgBmAGkAbAAgAEMAaQBuAHoAYQAgAEcAZQBuAOkA
+cgBpAGMAbwQXBDAEMwQwBDsETAQ9BDgEOQAgBD8EQAQ+BEQEMAQ5BDsAIABHAHIAYQB5AFAAcgBvAGYA
+aQBsACAAZwDpAG4A6QByAGkAcQB1AGUAIABnAHIAaQBzAMEAbAB0AGEAbADhAG4AbwBzACAAcwB6APwA
+cgBrAGUAIABwAHIAbwBmAGkAbJAadShwcJaOgnJfaWPPj/AARwBlAG4AZQByAGkAcwBrACAAZwByAOUA
+dABvAG4AZQBwAHIAbwBmAGkAbABPAGIAZQBjAG4A/QAgAWEAZQBkAP0AIABwAHIAbwBmAGkAbAXkBegF
+1QXkBdkF3AAgAEcAcgBhAHkAIAXbBdwF3AXZAFAAcgBvAGYAaQBsAG8AIABnAHIAaQBnAGkAbwAgAGcA
+ZQBuAGUAcgBpAGMAbwBQAHIAbwBmAGkAbAAgAGcAcgBpACAAZwBlAG4AZQByAGkAYwBBAGwAbABnAGUA
+bQBlAGkAbgBlAHMAIABHAHIAYQB1AHMAdAB1AGYAZQBuAC0AUAByAG8AZgBpAGzHfLwYACAARwByAGEA
+eQAg1QS4XNMMx3wARwBlAG4AZQByAGkAcwBrACAAZwByAOUAcwBrAGEAbABlAHAAcgBvAGYAaQBsZm6Q
+GnBwXqZjz4/wZYdO9k4AgiwwsDDsMKQw1zDtMNUwoTCkMOsDkwO1A70DuQO6A8wAIAPAA8EDvwPGA68D
+uwAgA7MDugPBA7kAUABlAHIAZgBpAGwAIABnAGUAbgDpAHIAaQBjAG8AIABkAGUAIABjAGkAbgB6AGUA
+bgB0AG8AcwBBAGwAZwBlAG0AZQBlAG4AIABnAHIAaQBqAHMAcAByAG8AZgBpAGUAbABQAGUAcgBmAGkA
+bAAgAGcAcgBpAHMAIABnAGUAbgDpAHIAaQBjAG8OQg4bDiMORA4fDiUOTA4qDjUOQA4XDjIOFw4xDkgO
+Jw5EDhsARwBlAG4AZQBsACAARwByAGkAIABQAHIAbwBmAGkAbABpAFkAbABlAGkAbgBlAG4AIABoAGEA
+cgBtAGEAYQBwAHIAbwBmAGkAaQBsAGkARwBlAG4AZQByAGkBDQBrAGkAIABwAHIAbwBmAGkAbAAgAHMA
+aQB2AGkAaAAgAHQAbwBuAG8AdgBhAFUAbgBpAHcAZQByAHMAYQBsAG4AeQAgAHAAcgBvAGYAaQBsACAA
+cwB6AGEAcgBvAVsAYwBpBB4EMQRJBDgEOQAgBEEENQRABEsEOQAgBD8EQAQ+BEQEOAQ7BEwGRQZEBkEA
+IAYqBjkGMQZKBkEAIABHAHIAYQB5ACAGJwZEBjkGJwZFAEcAZQBuAGUAcgBpAGMAIABHAHIAYQB5ACAA
+UAByAG8AZgBpAGwAZQAAdGV4dAAAAABDb3B5cmlnaHQgMjAwNyBBcHBsZSBJbmMuLCBhbGwgcmlnaHRz
+IHJlc2VydmVkLgBYWVogAAAAAAAA81EAAQAAAAEWzGN1cnYAAAAAAAAAAQHNAADSJSYnKFokY2xhc3Nu
+YW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJbWFnZVJlcKMpKitfEBBOU0JpdG1hcEltYWdlUmVwWk5TSW1h
+Z2VSZXBYTlNPYmplY3TSJSYtLldOU0FycmF5oi0r0iUmMDFeTlNNdXRhYmxlQXJyYXmjMC0r0zM0CjU2
+N1dOU1doaXRlXE5TQ29sb3JTcGFjZUQwIDAAEAOADNIlJjk6V05TQ29sb3KiOSvSJSY8PVdOU0ltYWdl
+ojwrXxAPTlNLZXllZEFyY2hpdmVy0UBBVHJvb3SAAQAIABEAGgAjAC0AMgA3AEYATABXAF4AZQByAHkA
+gQCDAIUAigCMAI4AlQCaAKUApwCpAKsAsACzALUAtwC5ALsAwADXANkA2wlTCVgJYwlsCX8JgwmWCaEJ
+qgmvCbcJugm/Cc4J0gnZCeEJ7gnzCfUJ9wn8CgQKBwoMChQKFwopCiwKMQAAAAAAAAIBAAAAAAAAAEIA
+AAAAAAAAAAAAAAAAAAozA
+</mutableData>
+        </image>
         <image name="NSSmartBadgeTemplate" width="14" height="14"/>
         <image name="NSStatusAvailable" width="16" height="16"/>
         <image name="NSStatusPartiallyAvailable" width="16" height="16"/>

@@ -8,12 +8,45 @@
 
 #import "TodayScript.h"
 
+@class EditViewController;
+
+
+@interface EditViewLabelField : NSTextView
+@property IBOutlet EditViewController *editViewController;
+@end
+
+@interface EditViewProgramField : NSTextView
+@property IBOutlet EditViewController *editViewController;
+@end
+
+@interface EditViewScriptView : NSTextView;
+@property IBOutlet EditViewController *editViewController;
+@end
+
+@interface EditViewAutoRunButton : NSButton
+@property IBOutlet EditViewController *editViewController;
+@end
+
+@interface EditViewShowStatusButton : NSButton
+@property IBOutlet EditViewController *editViewController;
+@end
+
+@interface EditViewSaveButton : NSButton
+@property IBOutlet EditViewController *editViewController;
+@end
+
+
 @interface EditViewController : NCWidgetSearchViewController
 
 - (void)editScript:(TodayScript *)script;
 - (void)createScript;
 - (void)cancelScript;
 
-@end
+@property IBOutlet EditViewLabelField *labelField;
+@property IBOutlet EditViewProgramField *programField;
+@property IBOutlet EditViewScriptView *scriptField;
+@property IBOutlet EditViewAutoRunButton *autoRunButton;
+@property IBOutlet EditViewShowStatusButton *showStatusButton;
+@property IBOutlet EditViewSaveButton *saveButton;
 
-@interface EditViewProgramField : NSTextField @end
+@end

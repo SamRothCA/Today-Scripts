@@ -1,4 +1,4 @@
-//
+        //
 //  SearchViewController.m
 //  Today Scripts
 //
@@ -13,15 +13,6 @@
 
 @implementation EditViewController
 {
-    IBOutlet NSTextField *labelField;
-    IBOutlet EditViewProgramField *programField;
-    IBOutlet NSTextView *scriptField;
-    IBOutlet NSButton *autoRunButton;
-    IBOutlet NSButton *showStatusButton;
-    IBOutlet NSButton *saveButton;
-
-    NSString *defaultProgram;
-
     TodayScript *script;
 }
 
@@ -29,17 +20,44 @@
 {
     [super viewDidLoad];
 
-    // Set up the appearence of the script field.
-    scriptField.font = [NSFont fontWithName:@"Menlo" size:10];
-    scriptField.textColor = [NSColor colorWithWhite:1 alpha:1];
-    scriptField.backgroundColor = NSColor.clearColor;
+    self.labelField.backgroundColor = NSColor.clearColor;
+    self.programField.backgroundColor = NSColor.clearColor;
+    self.scriptField.backgroundColor = NSColor.clearColor;
+
+    self.labelField.textColor = NSColor.labelColor;
+    self.programField.textColor = NSColor.labelColor;
+    self.scriptField.textColor = NSColor.labelColor;
+
+    self.labelField.insertionPointColor = NSColor.labelColor;
+    self.programField.insertionPointColor = NSColor.labelColor;
+    self.scriptField.insertionPointColor = NSColor.labelColor;
+
+    self.labelField.font = [NSFont boldSystemFontOfSize:11];
+    self.programField.font = [NSFont boldSystemFontOfSize:11];
+    self.scriptField.font = [NSFont fontWithName:@"Menlo-Bold" size:9.5];
+
+    self.labelField.textContainerInset = NSMakeSize(0, 2);
+    self.programField.textContainerInset = NSMakeSize(0, 2);
+    self.scriptField.textContainerInset = NSMakeSize(0, 2);
+
+    NSDictionary *buttonAttributes = @{
+        NSForegroundColorAttributeName: NSColor.labelColor,
+        NSFontAttributeName: [NSFont systemFontOfSize:11]
+    };
+    self.autoRunButton.attributedTitle = [[NSAttributedString alloc]
+        initWithString:self.autoRunButton.title attributes:buttonAttributes];
+    self.showStatusButton.attributedTitle = [[NSAttributedString alloc]
+        initWithString:self.showStatusButton.title attributes:buttonAttributes];
+    self.saveButton.attributedTitle = [[NSAttributedString alloc]
+        initWithString:self.saveButton.title attributes:buttonAttributes];
+
     // Disable all substitutions in the script field.
-    scriptField.automaticDashSubstitutionEnabled   = NO;
-    scriptField.automaticQuoteSubstitutionEnabled  = NO;
-    scriptField.automaticTextReplacementEnabled    = NO;
-    scriptField.automaticLinkDetectionEnabled      = NO;
-    scriptField.automaticSpellingCorrectionEnabled = NO;
-    scriptField.automaticDataDetectionEnabled      = NO;
+    self.scriptField.automaticDashSubstitutionEnabled   = NO;
+    self.scriptField.automaticQuoteSubstitutionEnabled  = NO;
+    self.scriptField.automaticTextReplacementEnabled    = NO;
+    self.scriptField.automaticLinkDetectionEnabled      = NO;
+    self.scriptField.automaticSpellingCorrectionEnabled = NO;
+    self.scriptField.automaticDataDetectionEnabled      = NO;
 }
 
 - (void)editScript:(TodayScript *)existingScript
@@ -47,17 +65,20 @@
     // Show ourselves in the widget.
     [todayViewController presentViewControllerInWidget:self];
     // Set the button's title to designate that we are editing a script.
-    saveButton.title = @"Save Script";
+    self.saveButton.title = @"Save Script";
 
     // Set our script variable to the script passed to us.
     script = existingScript;
 
     // Set the values in our form to those of the script.
-    labelField.stringValue = script.label;
-    programField.stringValue = script.program;
-    scriptField.string = script.script;
-    autoRunButton.state = script.autoRun ? NSOnState : NSOffState;
-    showStatusButton.state = script.showStatus ? NSOnState : NSOffState;
+    self.labelField.string = script.label;
+    self.programField.string = script.program;
+    self.scriptField.string = script.script;
+    self.autoRunButton.state = script.autoRun ? NSOnState : NSOffState;
+    self.showStatusButton.state = script.showStatus ? NSOnState : NSOffState;
+
+    // Focus the script field initially.
+    [self.view.window makeFirstResponder:self.scriptField];
 }
 
 - (void)createScript
@@ -68,14 +89,17 @@
     // Show ourselves in the widget.
     [todayViewController presentViewControllerInWidget:self];
     // Set the button's title to designate that we are creating a script.
-    saveButton.title = @"Add Script";
+    self.saveButton.title = @"Add Script";
 
     // Set up our fields with the default values.
-    labelField.stringValue = @"";
-    programField.stringValue = NSProcessInfo.processInfo.environment[@"SHELL"];
-    scriptField.string = @"";
-    autoRunButton.state = NSOnState;
-    showStatusButton.state = NSOnState;
+    self.labelField.string = @"";
+    self.programField.string = NSProcessInfo.processInfo.environment[@"SHELL"];
+    self.scriptField.string = @"";
+    self.autoRunButton.state = NSOnState;
+    self.showStatusButton.state = NSOnState;
+
+    // Focus the label field initially.
+    [self.view.window makeFirstResponder:self.labelField];
 }
 
 // Method invoked when user presses the "Add Script" button.
@@ -83,9 +107,9 @@
 {
     // If the interpreter is not a valid executable file, style the text to
     // indicate the error to the user, then abort.
-    NSString *programString = programField.stringValue;
+    NSString *programString = self.programField.string;
     if (! [NSFileManager.defaultManager isExecutableFileAtPath:programString]) {
-        programField.textColor = [NSColor colorWithRed:1.0 green:0.2 blue:0.2 alpha:1.0];
+        self.programField.textColor = [NSColor colorWithRed:1.0 green:0.2 blue:0.2 alpha:1.0];
         return;
     }
 
@@ -97,20 +121,20 @@
 
     // Set the script to the dictionary if the user provided one. Otherwise,
     // remove any which may have previously existed.
-    newScript.script = scriptField.string.copy;
+    newScript.script = self.scriptField.string.copy;
 
     // Set the script's title to the user provided one.
-    newScript.label = labelField.stringValue.copy;
+    newScript.label = self.labelField.string.copy;
     // If a title was not provided, use the text of the script, or the name of
     // the program itself if there is no script.
     if (! newScript.label.length)
         newScript.label = newScript.script.length ? newScript.script : newScript.program;
 
     // If the checkbox wasn't unchecked, this script is to be run automatically.
-    newScript.autoRun = (autoRunButton.state != NSOffState);
+    newScript.autoRun = (self.autoRunButton.state != NSOffState);
 
     // If the checkbox wasn't unchecked, this script is to be run automatically.
-    newScript.showStatus = (showStatusButton.state != NSOffState);
+    newScript.showStatus = (self.showStatusButton.state != NSOffState);
 
     // If we were given a script to work with, remove it from our form, make
     // sure it it's stopped running, then update our defaults.
@@ -143,20 +167,203 @@
 @end
 
 
-@implementation EditViewProgramField
 
-// When the user starts editing the program field, make sure the text color goes
-// back to normal in case it was previously changed to indicate an error.
-- (void)textDidBeginEditing:(NSNotification *)notification {
-    self.textColor = [NSColor colorWithWhite:1.0 alpha:1.0];
+@implementation EditViewLabelField
+
+- (void)keyDown:(NSEvent *)theEvent
+{
+    // Get the character that was typed.
+    int character = [theEvent.characters characterAtIndex:0];
+
+    // If it was a tab with the shift key, we will be moving back a field.
+    if (character == NSBackTabCharacter)
+    {
+        // If full keyboard navigation is enabled, move back to the save button.
+        if (self.editViewController.saveButton.canBecomeKeyView)
+        {
+            self.selectedRange = NSMakeRange(0, 0);
+            [self.window makeFirstResponder:self.editViewController.saveButton];
+        }
+        // If it is not, move back to the script field.
+        else {
+            self.selectedRange = NSMakeRange(0, 0);
+            [self.window makeFirstResponder:self.editViewController.scriptField];
+        }
+    }
+
+    // If it was a tab without the shift key, move on to the script field.
+    else if (character == NSTabCharacter)
+    {
+        self.selectedRange = NSMakeRange(0, 0);
+        [self.window makeFirstResponder:self.editViewController.programField];
+        [self.editViewController.programField selectAll:self];
+    }
+
+    // If the character wasn't a tab, pass it to the text field normally.
+    else
+        [super keyDown:theEvent];
 }
 
-// If user enters an invalid program in the program field, set its text as red
-// to indicate this.
-- (void)textDidEndEditing:(NSNotification *)notification
+@end
+
+
+@implementation EditViewProgramField
+
+- (void)didChangeText
 {
-    if (! [NSFileManager.defaultManager isExecutableFileAtPath:self.stringValue])
-        self.textColor = [NSColor colorWithRed:1.0 green:0.3 blue:0.3 alpha:1.0];
+    [super didChangeText];
+
+    // When the user starts editing the program field, make sure the text color
+    // returns to normal in case it was previously changed to indicate an error.
+    if ([NSFileManager.defaultManager isExecutableFileAtPath:self.string])
+        self.textColor = NSColor.labelColor;
+
+    // If user enters an invalid program in the program field, set its text as
+    // red to indicate this.
+    else
+        self.textColor = [NSColor colorWithRed:1.0 green:0.5 blue:0.5 alpha:1.0];
+}
+
+- (void)keyDown:(NSEvent *)theEvent
+{
+    // Get the character that was typed.
+    int character = [theEvent.characters characterAtIndex:0];
+
+    // If the shift and tab were typed, move back to the program field.
+    if (character == NSBackTabCharacter)
+    {
+        self.selectedRange = NSMakeRange(0, 0);
+        [self.window makeFirstResponder:self.editViewController.labelField];
+        [self.editViewController.labelField selectAll:self];
+    }
+
+    // If just a tab was typed, move on to the show status box.
+    else if (character == NSTabCharacter)
+    {
+        self.selectedRange = NSMakeRange(0, 0);
+        [self.window makeFirstResponder:self.editViewController.scriptField];
+    }
+
+    // For any other keys, pass them to the text field as normal.
+    else
+        [super keyDown:theEvent];
+}
+
+@end
+
+
+@implementation EditViewScriptView
+
+- (void)keyDown:(NSEvent *)theEvent
+{
+    // Get the character that was typed.
+    int character = [theEvent.characters characterAtIndex:0];
+
+    // If the shift and tab were typed, move back to the program field.
+    if (character == NSBackTabCharacter)
+    {
+        [self.window makeFirstResponder:self.editViewController.programField];
+        [self.editViewController.programField selectAll:self];
+    }
+
+    // If option and tab were typed, we will be moving forward.
+    else if (character == NSTabCharacter && (theEvent.modifierFlags & NSAlternateKeyMask))
+    {
+        // If full keyboard navigation is enabled, move on to the auto-run box.
+        if (self.editViewController.autoRunButton.canBecomeKeyView)
+            [self.window makeFirstResponder:self.editViewController.autoRunButton];
+        // If it isn't, move on to the label field.
+        else {
+            [self.window makeFirstResponder:self.editViewController.labelField];
+            [self.editViewController.labelField selectAll:self];
+        }
+    }
+    // For any other keys, pass them to the text field as normal.
+    else
+        [super keyDown:theEvent];
+}
+
+@end
+
+
+@implementation EditViewAutoRunButton
+
+- (void)keyDown:(NSEvent *)theEvent
+{
+    // Get the character that was typed.
+    int character = [theEvent.characters characterAtIndex:0];
+
+    // If the shift and tab were typed, move back to the script field.
+    if (character == NSBackTabCharacter)
+        [self.window makeFirstResponder:self.editViewController.scriptField];
+
+    // If just a tab was typed, move on to the show status box.
+    else if (character == NSTabCharacter)
+        [self.window makeFirstResponder:self.editViewController.showStatusButton];
+
+    // If the space key was typed, toggle our state.
+    else if (character == ' ')
+        [self performClick:self];
+
+    // Any other keys, pass to the box to handle.
+    else
+        [super keyDown:theEvent];
+}
+
+@end
+
+
+@implementation EditViewShowStatusButton
+
+- (void)keyDown:(NSEvent *)theEvent
+{
+    // Get the character that was typed.
+    int character = [theEvent.characters characterAtIndex:0];
+
+    // If the shift and tab were typed, move back to the script field.
+    if (character == NSBackTabCharacter)
+        [self.window makeFirstResponder:self.editViewController.autoRunButton];
+
+    // If just a tab was typed, move on to the show status box.
+    else if (character == NSTabCharacter)
+        [self.window makeFirstResponder:self.editViewController.saveButton];
+
+    // If the space key was typed, toggle our state.
+    else if (character == ' ')
+        [self performClick:self];
+
+    // Any other keys, pass to the box to handle.
+    else
+        [super keyDown:theEvent];
+}
+
+@end
+
+
+@implementation EditViewSaveButton
+
+- (void)keyDown:(NSEvent *)theEvent
+{
+    // Get the character that was typed.
+    int character = [theEvent.characters characterAtIndex:0];
+
+    // If the shift and tab were typed, move back to the script field.
+    if (character == NSBackTabCharacter)
+        [self.window makeFirstResponder:self.editViewController.showStatusButton];
+
+    // If just a tab was typed, move on to the show status box.
+    else if (character == NSTabCharacter)
+    {
+        [self.window makeFirstResponder:self.editViewController.labelField];
+        [self.editViewController.labelField selectAll:self];
+    }
+    // If the space key was typed, toggle our state.
+    else if (character == ' ')
+        [self performClick:self];
+
+    // Any other keys, pass to the box to handle.
+    else
+        [super keyDown:theEvent];
 }
 
 @end
