@@ -15,7 +15,7 @@
 @implementation AppDelegate
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
-//    [NSApplication.sharedApplication terminate:self];
+    [NSApplication.sharedApplication terminate:self];
 }
 
 @end
