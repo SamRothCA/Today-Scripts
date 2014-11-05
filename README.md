@@ -9,7 +9,7 @@ A widget for running scripts in the Today View in OS X Yosemite's Notification C
 ##Features
 
 * [Colorized Output](http://i.imgur.com/Yvj2ePG.png). Today Scripts supports colorized terminal output from your scripts, as well as bold and underline.
-* [Custom Labels](http://i.imgur.com/WJPWQN7.png). Today Scripts has a form for setting up scripts, which gives you the option of picking a label to display instead of the script itself.
+* [Custom Labels](http://i.imgur.com/LL4s6Ao.png). Today Scripts has a form for setting up scripts, which gives you the option of picking a label to display instead of the script itself.
 * Custom Interpreters: When setting up a script, you may specify any program to run in place of your shell. This means you can directly run scripts in Python, Perl, AppleScript, etcetera, simply by specifying their associated interpreter.
 * Manually Run Scripts: Scripts may be run on command by clicking on their label. You may also specify that scripts not be run automatically when Notification Center is opened.
 * Output text selection: You may highlight the output of your scripts, allowing you to copy it to the clipboard or drag it where you please.
