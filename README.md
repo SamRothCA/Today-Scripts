@@ -2,7 +2,7 @@
 
 A widget for running scripts in the Today View in OS X Yosemite's Notification Center.
 
-[**Download the latest build here.**](https://github.com/SamRothCA/Today-Scripts/raw/master/Today%20Scripts.dmg)
+[**Download the latest build here.**](https://github.com/SamRothCA/Today-Scripts/releases)
 
 [See the wiki for a list of example scripts.](https://github.com/SamRothCA/Today-Scripts/wiki)
 
