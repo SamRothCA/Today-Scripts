@@ -16,7 +16,7 @@ A widget for running scripts in the Today View in OS X Yosemite's Notification C
 
 ##Usage
 
-After building, simply copy "Today Scripts.app" wherever you'd like to store it, then open it. In Notification Center, you will see "1 New" appear on the edit button, and you may use that to add Today Scripts to your Tdoay View in order to begin using it.
+After building, simply copy "Today Scripts.app" wherever you'd like to store it, then open it. In Notification Center, you will see "1 New" appear on the edit button, and you may use that to add Today Scripts to your Today View in order to begin using it.
 
 To begin editing your list of scripts, click the "Info" symbol in the title of the widget.
 
