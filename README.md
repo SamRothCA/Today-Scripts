@@ -1,12 +1,19 @@
-#Today Scripts
+##  Today-Scripts (custom scripts in your notification bar. This fork has a fix for Mac OS X El Capitan, tested on **10.11.1**)  
 
-A widget for running scripts in the Today View in OS X Yosemite's Notification Center.
 
-[**Download the latest build here.**](https://github.com/SamRothCA/Today-Scripts/releases)
+If you don't want to compile this yourself, nor clone the repo to get the binary in the `build` dir, you can **download the binary directly** from <https://github.com/lsd/Today-Scripts/raw/master/build/Today%20Scripts.app.zip> (see the 
 
-[See the wiki for a list of example scripts.](https://github.com/SamRothCA/Today-Scripts/wiki)
 
-##Features
+**A widget for running custom scripts in the Today View in OS X Yosemite's and El Capitan's Notification Center.**
+
+# ·°
+
+Original links and text preserved:  
+
+- [Latest build here from original repo (does not contain **.app** binary and as of now does not work out of the box for El Capitan)](https://github.com/SamRothCA/Today-Scripts/releases)
+- [See the wiki for a list of example scripts.](https://github.com/SamRothCA/Today-Scripts/wiki)
+
+###Features
 
 * [Colorized Output](http://i.imgur.com/Yvj2ePG.png). Today Scripts supports colorized terminal output from your scripts, as well as bold and underline.
 * [Custom Labels](http://i.imgur.com/LL4s6Ao.png). Today Scripts has a form for setting up scripts, which gives you the option of picking a label to display instead of the script itself.
@@ -30,8 +37,3 @@ To edit an existing script, click the "action" button to the right of its label.
 * Today Scripts emulates a 40-column terminal. When running a script, a pseudo-TTY is opened for it, and the standard output and standard error of it is set to that. The `COLUMNS` environment variable for scripts is set to `40`, and `PAGER` is set to `/bin/cat`.
 * Today Scripts supports all ANSI color sequences; both standard and bright, as well as both foreground and background. The `TERM` environment variable for scripts is set to `ansi`.
 
-##Special Thanks
-
-Support for ANSI escape sequences made possible thanks to [Ali Rantakari's ANSIEscapeHelper](http://hasseg.org/ansiEscapeHelper/).
-
-Icon designed by [Friedrich Preuß](http://phriedrich.de).
