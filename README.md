@@ -8,7 +8,7 @@ or download the binary **.app* or **.zip**. You can **download the binary** from
 
 ## Still having issues with running this on El Capitan?  
 
-**If you're still having problems running Today-Scripts on El Capitan, [please read this](https://github.com/SamRothCA/Today-Scripts/issues/24#issuecomment-160041420)**
+:warning: **If you're still having problems running Today-Scripts on El Capitan, [please read https://github.com/SamRothCA/Today-Scripts/issues/24#issuecomment-160041420](https://github.com/SamRothCA/Today-Scripts/issues/24#issuecomment-160041420)**
 
 
 **A widget for running custom scripts in the Today View in OS X Yosemite's and El Capitan's Notification Center.**
