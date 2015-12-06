@@ -4,14 +4,14 @@
 
 If you don't want to compile this yourself, nor clone the repo to get the binary in the `build` dir  
 
-### or download the binary **.app* or **.zip**
+or download the binary **.app* or **.zip**. You can **download the binary** from [Today Scripts.app zipped to 168K](https://github.com/lsd/Today-Scripts/raw/master/build/Today%20Scripts.app.zip) or view the [build/ for the uncompressed bin @ 380K](https://github.com/lsd/Today-Scripts/tree/master/build) dir. 
 
-you can **download the binary** from [Today Scripts.app zipped to 168K](https://github.com/lsd/Today-Scripts/raw/master/build/Today%20Scripts.app.zip) or view the [build/ for the uncompressed bin @ 380K](https://github.com/lsd/Today-Scripts/tree/master/build) dir. 
+## Still having issues with running this on El Capitan?  
+
+**If you're still having problems running Today-Scripts on El Capitan, [please read this](https://github.com/SamRothCA/Today-Scripts/issues/24#issuecomment-160041420)**
 
 
 **A widget for running custom scripts in the Today View in OS X Yosemite's and El Capitan's Notification Center.**
-
-# ·°
 
 Original links and text preserved:  
 
