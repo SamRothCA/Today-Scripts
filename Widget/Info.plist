@@ -28,6 +28,11 @@
 	<dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.widget-extension</string>
+		<key>NSExtensionAttributes</key>
+		<dict>
+			<key>NSExtensionPointVersion</key>
+			<string>2.0</string>
+		</dict>
 		<key>NSExtensionPrincipalClass</key>
 		<string>TodayViewController</string>
 		<key>com.apple.notificationcenter.widget.description</key>

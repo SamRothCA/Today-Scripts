@@ -6,11 +6,11 @@
 	<dict>
 		<key>Resources/EditViewController.nib</key>
 		<data>
-		ZCQdoAfVFIwgW9TG4ov+T8PRXD8=
+		YuELM0M/ItBcLH7NkPTql//qOQc=
 		</data>
 		<key>Resources/ListRowViewController.nib</key>
 		<data>
-		/PeM5lASzrRsfQfcHXoKSZnsliE=
+		Bq/Lq8R4COgn5MGE8Dqd/Gx7sJE=
 		</data>
 		<key>Resources/TodayViewController.nib</key>
 		<data>
@@ -29,22 +29,47 @@
 	<key>files2</key>
 	<dict>
 		<key>Resources/EditViewController.nib</key>
-		<data>
-		ZCQdoAfVFIwgW9TG4ov+T8PRXD8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			YuELM0M/ItBcLH7NkPTql//qOQc=
+			</data>
+			<key>hash2</key>
+			<data>
+			GAuQcoO5OWYt7/wTUDLBiLqcxWyNR0OCWx06cINAR88=
+			</data>
+		</dict>
 		<key>Resources/ListRowViewController.nib</key>
-		<data>
-		/PeM5lASzrRsfQfcHXoKSZnsliE=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			Bq/Lq8R4COgn5MGE8Dqd/Gx7sJE=
+			</data>
+			<key>hash2</key>
+			<data>
+			fYUdcuwPNJIE9WkkawbKQOBh0ZvQNnGxwtkZtIFzBIM=
+			</data>
+		</dict>
 		<key>Resources/TodayViewController.nib</key>
-		<data>
-		NF4ZzVYwZexJ4gipvE1ozXKAYBo=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			NF4ZzVYwZexJ4gipvE1ozXKAYBo=
+			</data>
+			<key>hash2</key>
+			<data>
+			Kd/39i2ycTlAVF61FZPbXzXiOZW77iL7soZ6PrGknCE=
+			</data>
+		</dict>
 		<key>Resources/en.lproj/InfoPlist.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
 			6rtT7UKKn0DLB8H40NOLH4F5FO8=
+			</data>
+			<key>hash2</key>
+			<data>
+			Ji31vfCivXwVZvCHNBczbXbradYXr2z0K1M7VxAhtGM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -53,10 +78,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			w+s8rwSG6SicBbc8yJ07ufl2g6s=
+			EjH8DAPYkaKds2+Iurl/f2lal1A=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"c3eb3caf0486e9289c05b73cc89d3bb9f97683ab"</string>
+			<string>cdhash H"c44fd8d33217b7244c15f29d39b88bea5ab434e0" or cdhash H"1231fc0c03d891a29db36f88bab97f7f695a9750"</string>
 		</dict>
 	</dict>
 	<key>rules</key>
@@ -76,6 +101,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -135,6 +165,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^[^/]+$</key>
 		<dict>

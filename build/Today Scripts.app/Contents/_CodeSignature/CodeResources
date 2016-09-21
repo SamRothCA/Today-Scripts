@@ -23,23 +23,44 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			dKhnc1V0w4E463o48HLDMSZNl7Q=
+			GWNwi7jWO9Wy+9ELGZMknDNKQ9g=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"74a867735574c38138eb7a38f072c331264d97b4"</string>
+			<string>cdhash H"06d29a0599dd8283e13708b7cd1ff0e3c1445572" or cdhash H"1963708bb8d63bd5b2fbd10b1993249c334a43d8"</string>
 		</dict>
 		<key>Resources/AppIcon.icns</key>
-		<data>
-		ffQnERMMcTchU7nB61s2cw9hgQo=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			ffQnERMMcTchU7nB61s2cw9hgQo=
+			</data>
+			<key>hash2</key>
+			<data>
+			ASB45NNPtf65bglfZsZEUD6P9et+/yHZBAEyTKff5MY=
+			</data>
+		</dict>
 		<key>Resources/Icon Credit.txt</key>
-		<data>
-		3Gsptz5YcBluI3SilPwdlPPOLpg=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			3Gsptz5YcBluI3SilPwdlPPOLpg=
+			</data>
+			<key>hash2</key>
+			<data>
+			Yc4m/7e17Depu3RnyG0644KjfMFTscyTBJGrOxmKaO4=
+			</data>
+		</dict>
 		<key>Resources/MainMenu.nib</key>
-		<data>
-		CkEbvXY8tQZyYF5dB91tI3yZdqk=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			CkEbvXY8tQZyYF5dB91tI3yZdqk=
+			</data>
+			<key>hash2</key>
+			<data>
+			hv2hk1URRIhay6v5dezcoHXJDOPGpw5R0RDuzHsWhsw=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
@@ -58,6 +79,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -117,6 +143,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^[^/]+$</key>
 		<dict>

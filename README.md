@@ -1,21 +1,21 @@
-##  Today-Scripts (custom scripts in your notification bar. This fork has a fix for Mac OS X El Capitan, tested on **10.11.1**)  
+##  Today-Scripts (custom scripts in your notification bar. This fork has a fix for macOS Sierra, tested on **10.12.0**)  
 
-### Clone and compile yourself *(tested to work with Xcode 7.1 target platform 10.10 or 10.11)*
+### Clone and compile yourself *(tested to work with Xcode 8 target platform 10.12 or 10.11)*
 
 If you don't want to compile this yourself, nor clone the repo to get the binary in the `build` dir  
 
-or download the binary **.app* or **.zip**. You can **download the binary** from [Today Scripts.app zipped to 168K](https://github.com/lsd/Today-Scripts/raw/master/build/Today%20Scripts.app.zip) or view the [build/ for the uncompressed bin @ 380K](https://github.com/lsd/Today-Scripts/tree/master/build) dir. 
+or download the binary **.app* or **.zip**. You can **download the binary** from [Today Scripts.app zipped to 168K](https://github.com/lsd/Today-Scripts/raw/master/build/Today%20Scripts.app.zip) or view the [build/ for the uncompressed bin @ 389K](https://github.com/lsd/Today-Scripts/tree/master/build) dir. 
 
-## Still having issues with running this on El Capitan?  
+## Still having issues with running this on Sierra?  
 
-:warning: **If you're still having problems running Today-Scripts on El Capitan, [please read https://github.com/SamRothCA/Today-Scripts/issues/24#issuecomment-160041420](https://github.com/SamRothCA/Today-Scripts/issues/24#issuecomment-160041420)**
+:warning: **If you're still having problems running Today-Scripts on Sierra, [please read https://github.com/SamRothCA/Today-Scripts/issues/24#issuecomment-160041420](https://github.com/SamRothCA/Today-Scripts/issues/24#issuecomment-160041420)**
 
 
-**A widget for running custom scripts in the Today View in OS X Yosemite's and El Capitan's Notification Center.**
+**A widget for running custom scripts in the Today View in OS X Yosemite's and El Capitan's and Sierra's Notification Center.**
 
 Original links and text preserved:  
 
-- [Latest build here from original repo (does not contain **.app** binary and as of now does not work out of the box for El Capitan)](https://github.com/SamRothCA/Today-Scripts/releases)
+- [Latest build here from original repo (does not contain **.app** binary and as of now does not work out of the box for Sierra)](https://github.com/SamRothCA/Today-Scripts/releases)
 - [See the wiki for a list of example scripts.](https://github.com/SamRothCA/Today-Scripts/wiki)
 
 ###Features
