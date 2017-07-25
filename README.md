@@ -2,16 +2,7 @@
 
 ### Clone and compile yourself *(tested to work with Xcode 8 target platform 10.12 or 10.11)*
 
-If you don't want to compile this yourself, nor clone the repo to get the binary in the `build` dir  
-
-or download the binary **.app* or **.zip**. You can **download the binary** from [Today Scripts.app zipped to 168K](https://github.com/lsd/Today-Scripts/raw/master/build/Today%20Scripts.app.zip) or view the [build/ for the uncompressed bin @ 389K](https://github.com/lsd/Today-Scripts/tree/master/build) dir. 
-
-## Still having issues with running this on Sierra?  
-
-:warning: **If you're still having problems running Today-Scripts on Sierra, [please read https://github.com/SamRothCA/Today-Scripts/issues/24#issuecomment-160041420](https://github.com/SamRothCA/Today-Scripts/issues/24#issuecomment-160041420)**
-
-
-**A widget for running custom scripts in the Today View in OS X Yosemite's and El Capitan's and Sierra's Notification Center.**
+**Download the binary** from [Today Scripts.app.zip](https://github.com/megabitsenmzq/Today-Scripts/releases/download/1.2/Today.Scripts.app.zip)
 
 Original links and text preserved:  
 
