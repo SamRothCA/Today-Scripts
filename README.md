@@ -1,6 +1,7 @@
-##  Today-Scripts (custom scripts in your notification center, tested on **10.13.0**)  
+#  Today-Scripts 
+## A widget for running scripts in the Today View in macOS's Notification Center. Tested on **10.13.0**.
 
-**Download the binary** from [Today Scripts.app.zip](https://github.com/megabitsenmzq/Today-Scripts/releases/download/1.3/Today.Scripts.app.zip)
+**Download the app** from [Today Scripts.app.zip](https://github.com/megabitsenmzq/Today-Scripts/releases/download/1.3/Today.Scripts.app.zip)
 
 Original links and text preserved:  
 
@@ -17,7 +18,7 @@ Original links and text preserved:
 
 ## Usage
 
-After building, simply copy "Today Scripts.app" wherever you'd like to store it, then open it. In Notification Center, you will see "1 New" appear on the edit button, and you may use that to add Today Scripts to your Today View in order to begin using it.
+Simply copy "Today Scripts.app" wherever you'd like to store it, then open it. In Notification Center, you will see "1 New" appear on the edit button, and you may use that to add Today Scripts to your Today View in order to begin using it.
 
 To begin editing your list of scripts, click the "Info" symbol in the title of the widget.
 
@@ -33,6 +34,8 @@ To edit an existing script, click the "action" button to the right of its label.
 
 ## 中文简介
 
-Today Scripts 是一个在 macOS 通知中心中运行各种脚本的小工具，你可以在其中运行 Bash Python 等各种类型的脚本，从而可以做到诸如查看系统硬件状态（替代 iStats Menu）等非常实用的功能。高级用户还可以使用 curl 等命令方便的查询各种网站上的信息（如收入情况）等等。
+Today Scripts 是一个在 macOS 通知中心中运行脚本的小工具，你可以在其中运行 Bash、Python 等各种类型的脚本，从而可以做到诸如查看系统硬件状态（替代 iStats Menu）；使用 curl 等命令方便的查询各种网站上的信息（如收入情况）；等非常实用的功能。高级用户还可以自己开发更多的玩法。
 
 详细使用介绍可以参见我在少数派发表的文章：[让你的 Mac 通知中心变得更实用：Today Scripts](https://sspai.com/post/40169)
+
+
