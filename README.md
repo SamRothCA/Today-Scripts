@@ -1,4 +1,4 @@
-##  Today-Scripts (custom scripts in your notification center. This fork has a fix for new macOS, tested on **10.13.0**)  
+##  Today-Scripts (custom scripts in your notification center, tested on **10.13.0**)  
 
 **Download the binary** from [Today Scripts.app.zip](https://github.com/megabitsenmzq/Today-Scripts/releases/download/1.3/Today.Scripts.app.zip)
 
