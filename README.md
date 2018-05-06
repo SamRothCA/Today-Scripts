@@ -1,8 +1,6 @@
-##  Today-Scripts (custom scripts in your notification bar. This fork has a fix for macOS Sierra, tested on **10.12.0**)  
+##  Today-Scripts (custom scripts in your notification center. This fork has a fix for new macOS, tested on **10.13.0**)  
 
-### Clone and compile yourself *(tested to work with Xcode 8 target platform 10.12 or 10.11)*
-
-**Download the binary** from [Today Scripts.app.zip](https://github.com/megabitsenmzq/Today-Scripts/releases/download/1.2/Today.Scripts.app.zip)
+**Download the binary** from [Today Scripts.app.zip](https://github.com/megabitsenmzq/Today-Scripts/releases/download/1.3/Today.Scripts.app.zip)
 
 Original links and text preserved:  
 
@@ -33,3 +31,8 @@ To edit an existing script, click the "action" button to the right of its label.
 * Today Scripts emulates a 40-column terminal. When running a script, a pseudo-TTY is opened for it, and the standard output and standard error of it is set to that. The `COLUMNS` environment variable for scripts is set to `40`, and `PAGER` is set to `/bin/cat`.
 * Today Scripts supports all ANSI color sequences; both standard and bright, as well as both foreground and background. The `TERM` environment variable for scripts is set to `ansi`.
 
+## 中文简介
+
+Today Scripts 是一个在 macOS 通知中心中运行各种脚本的小工具，你可以在其中运行 Bash Python 等各种类型的脚本，从而可以做到诸如查看系统硬件状态（替代 iStats Menu）等非常实用的功能。高级用户还可以使用 curl 等命令方便的查询各种网站上的信息（如收入情况）等等。
+
+详细使用介绍可以参见我在少数派发表的文章：[让你的 Mac 通知中心变得更实用：Today Scripts](https://sspai.com/post/40169)
