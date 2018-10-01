@@ -27,6 +27,8 @@ TodayViewController *todayViewController;
     [super viewDidLoad];
 
     todayViewController = self;
+    
+    
 
     // Set up the view controller for adding and editing scripts.
     self.editViewController = [[EditViewController alloc] init];
