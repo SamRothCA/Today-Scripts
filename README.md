@@ -1,11 +1,14 @@
 #  Today-Scripts [Megabits fixed ver.]
-## A widget for running scripts in the Today View in macOS's Notification Center.
+
+![Tested](https://img.shields.io/badge/Tested%20on-macOS%2010.15-green)
+
+*A widget for running scripts in the Today View in macOS's Notification Center.*
 
 **Download the app** from [Today Scripts.app.zip](https://github.com/megabitsenmzq/Today-Scripts/releases/download/1.4a/Today.Scripts.app.zip)
 
 Original links and text preserved:  
 
-- [Latest build here from original repo (does not contain **.app** binary and as of now does not work out of the box for Sierra)](https://github.com/SamRothCA/Today-Scripts/releases)
+- [Latest build here from original repo (does not work on new macOS)](https://github.com/SamRothCA/Today-Scripts/releases)
 - [See the wiki for a list of example scripts.](https://github.com/SamRothCA/Today-Scripts/wiki)
 
 ### Features
