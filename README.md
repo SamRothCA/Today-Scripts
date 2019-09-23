@@ -4,7 +4,7 @@
 
 *A widget for running scripts in the Today View in macOS's Notification Center.*
 
-![Screenshot](Screenshot.png)
+![Screenshot](widget-screenshot.png)
 
 **Download the app** from [Today Scripts.app.zip](https://github.com/megabitsenmzq/Today-Scripts/releases/download/1.4a/Today.Scripts.app.zip)
 
