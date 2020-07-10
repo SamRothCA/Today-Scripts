@@ -1,5 +1,7 @@
 #  Today-Scripts [Megabits fixed ver.]
 
+## This app will not work on macOS Big Sur. Apple killed all old-style widgets on Big Sur, I'm very sad about it.
+
 ![Tested](https://img.shields.io/badge/Tested%20on-macOS%2010.15-green)
 
 *A widget for running scripts in the Today View in macOS's Notification Center.*
