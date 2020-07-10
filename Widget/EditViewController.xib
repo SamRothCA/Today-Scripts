@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="EditViewController">
@@ -21,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="265"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WKU-4c-tEB" userLabel="Label Label">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKU-4c-tEB" userLabel="Label Label">
                     <rect key="frame" x="20" y="228" width="49" height="14"/>
                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Label" id="zYG-jl-Xmw">
                         <font key="font" metaFont="smallSystem"/>
@@ -32,18 +34,16 @@
                 <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNF-BF-3n2" userLabel="Label Scroll">
                     <rect key="frame" x="75" y="226" width="205" height="19"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="cFz-HW-bAt" userLabel="Label Clip">
-                        <rect key="frame" x="1" y="1" width="223" height="133"/>
+                        <rect key="frame" x="1" y="1" width="203" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView importsGraphics="NO" richText="NO" continuousSpellChecking="YES" allowsUndo="YES" fieldEditor="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="jcz-m0-yi0" userLabel="Label View" customClass="EditViewLabelField">
-                                <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                            <textView importsGraphics="NO" richText="NO" fieldEditor="YES" continuousSpellChecking="YES" allowsUndo="YES" spellingCorrection="YES" smartInsertDelete="YES" id="jcz-m0-yi0" userLabel="Label View" customClass="EditViewLabelField">
+                                <rect key="frame" x="0.0" y="0.0" width="203" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="minSize" width="203" height="17"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                <size key="minSize" width="203" height="17"/>
-                                <size key="maxSize" width="463" height="10000000"/>
                                 <connections>
                                     <outlet property="editViewController" destination="-2" id="GKI-Zf-GLM"/>
                                 </connections>
@@ -59,11 +59,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="PIL-n2-Ehd">
-                        <rect key="frame" x="224" y="1" width="15" height="133"/>
+                        <rect key="frame" x="188" y="1" width="16" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ppa-Tb-oBt" userLabel="Program Label">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppa-Tb-oBt" userLabel="Program Label">
                     <rect key="frame" x="20" y="201" width="49" height="14"/>
                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Program" id="YMK-m2-DXR">
                         <font key="font" metaFont="smallSystem"/>
@@ -74,18 +74,16 @@
                 <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzK-ek-06M" userLabel="Program Scroll">
                     <rect key="frame" x="75" y="199" width="205" height="19"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="RJ0-uk-AXm" userLabel="Program Clip">
-                        <rect key="frame" x="1" y="1" width="223" height="133"/>
+                        <rect key="frame" x="1" y="1" width="203" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView importsGraphics="NO" richText="NO" continuousSpellChecking="YES" allowsUndo="YES" fieldEditor="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="m0T-Wm-kFz" userLabel="Program View" customClass="EditViewProgramField">
-                                <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                            <textView importsGraphics="NO" richText="NO" fieldEditor="YES" continuousSpellChecking="YES" allowsUndo="YES" spellingCorrection="YES" smartInsertDelete="YES" id="m0T-Wm-kFz" userLabel="Program View" customClass="EditViewProgramField">
+                                <rect key="frame" x="0.0" y="0.0" width="203" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="minSize" width="203" height="17"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                <size key="minSize" width="203" height="17"/>
-                                <size key="maxSize" width="463" height="10000000"/>
                                 <connections>
                                     <outlet property="editViewController" destination="-2" id="1UF-bC-fhn"/>
                                 </connections>
@@ -101,25 +99,23 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="L0a-xy-L5Y">
-                        <rect key="frame" x="224" y="1" width="15" height="133"/>
+                        <rect key="frame" x="188" y="1" width="16" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
                 <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVb-f0-amM" userLabel="Script Scroll">
                     <rect key="frame" x="20" y="63" width="260" height="128"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Fmm-9L-RgW" userLabel="Script Clip">
-                        <rect key="frame" x="1" y="1" width="223" height="133"/>
+                        <rect key="frame" x="1" y="1" width="258" height="126"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView importsGraphics="NO" richText="NO" allowsUndo="YES" verticallyResizable="YES" id="g23-5c-rM3" userLabel="Script View" customClass="EditViewScriptView">
-                                <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                            <textView importsGraphics="NO" richText="NO" allowsUndo="YES" id="g23-5c-rM3" userLabel="Script View" customClass="EditViewScriptView">
+                                <rect key="frame" x="0.0" y="0.0" width="258" height="126"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="minSize" width="258" height="126"/>
                                 <size key="maxSize" width="463" height="10000000"/>
                                 <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="258" height="126"/>
-                                <size key="maxSize" width="463" height="10000000"/>
                                 <connections>
                                     <outlet property="editViewController" destination="-2" id="1Tt-ib-UsR"/>
                                     <outlet property="nextKeyView" destination="xfS-In-uVf" id="Hn3-Lf-7cP"/>
@@ -136,12 +132,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="zBW-qB-PIF">
-                        <rect key="frame" x="224" y="1" width="15" height="133"/>
+                        <rect key="frame" x="243" y="1" width="16" height="126"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="xfS-In-uVf" userLabel="Auto Run Button" customClass="EditViewAutoRunButton">
-                    <rect key="frame" x="17" y="35" width="117" height="18"/>
+                    <rect key="frame" x="17" y="35" width="116" height="18"/>
                     <buttonCell key="cell" type="check" title="Run automatically" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="b0u-sz-0IN">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -151,7 +147,7 @@
                     </connections>
                 </button>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="vcF-tM-LhU" userLabel="Show Status Button" customClass="EditViewShowStatusButton">
-                    <rect key="frame" x="17" y="17" width="137" height="18"/>
+                    <rect key="frame" x="17" y="17" width="136" height="18"/>
                     <buttonCell key="cell" type="check" title="Show status indicator" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="SpY-3Z-Q6J">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -161,7 +157,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u1c-zf-cvc" userLabel="Save Button" customClass="EditViewSaveButton">
-                    <rect key="frame" x="202" y="14" width="83" height="28"/>
+                    <rect key="frame" x="203" y="14" width="82" height="28"/>
                     <buttonCell key="cell" type="push" title="Add Script" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1gZ-Fp-eku">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystem"/>

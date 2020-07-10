@@ -65,9 +65,17 @@
 - (void)setTitle:(NSString *)title
 {
     super.attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:@{
-        NSForegroundColorAttributeName: NSColor.labelColor,
+        NSForegroundColorAttributeName: NSColor.whiteColor,
         NSFontAttributeName:  [NSFont boldSystemFontOfSize:11]
     }];
+    
+    NSString *osxMode = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
+    
+    if (![osxMode  isEqual: @"Dark"]) {
+        super.attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:@{
+            NSForegroundColorAttributeName: NSColor.blackColor,
+            NSFontAttributeName:  [NSFont boldSystemFontOfSize:11]}];
+    }
 }
 
 - (void)keyDown:(NSEvent *)theEvent

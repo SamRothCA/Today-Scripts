@@ -267,7 +267,7 @@
     }
 
     // If option and tab were typed, we will be moving forward.
-    else if (character == NSTabCharacter && (theEvent.modifierFlags & NSAlternateKeyMask))
+    else if (character == NSTabCharacter && (theEvent.modifierFlags & NSEventModifierFlagOption))
     {
         // If full keyboard navigation is enabled, move on to the auto-run box.
         if (self.editViewController.autoRunButton.canBecomeKeyView)

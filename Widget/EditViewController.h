@@ -36,7 +36,7 @@
 @end
 
 
-@interface EditViewController : NCWidgetSearchViewController
+@interface EditViewController : NCWidgetListViewController
 
 - (void)editScript:(TodayScript *)script;
 - (void)createScript;

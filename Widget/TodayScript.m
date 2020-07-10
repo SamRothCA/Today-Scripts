@@ -343,6 +343,13 @@ NSCharacterSet *lineBreaks;
     // Default text color is our non-bright white.
     ANSIHelper.ansiColors[ @(AMR_SGRCodeFgReset) ] = ANSIHelper.defaultStringColor =
         ANSIHelper.ansiColors[ @(AMR_SGRCodeFgWhite) ];
+    
+    // Enable dark mode in Mojave
+    NSString *osxMode = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
+
+    if (![osxMode  isEqual: @"Dark"]) {
+        ANSIHelper.ansiColors[ @(AMR_SGRCodeFgReset) ] = ANSIHelper.defaultStringColor = ANSIHelper.ansiColors[ @(AMR_SGRCodeFgBrightBlack) ];
+    }
 
     // Default background is transparent.
     ANSIHelper.ansiColors[@( AMR_SGRCodeBgReset )] = NSColor.clearColor;

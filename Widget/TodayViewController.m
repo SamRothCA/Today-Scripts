@@ -27,6 +27,8 @@ TodayViewController *todayViewController;
     [super viewDidLoad];
 
     todayViewController = self;
+    
+    
 
     // Set up the view controller for adding and editing scripts.
     self.editViewController = [[EditViewController alloc] init];
@@ -62,7 +64,11 @@ TodayViewController *todayViewController;
 {
     // Tell the script array to auto run the scripts as necessary, and return
     // the update status it indicates.
-    handler(TodayScriptArray.sharedScripts.autoRun);
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_sync(queue, ^{
+        //code here
+        handler(TodayScriptArray.sharedScripts.autoRun);
+    });
 }
 
 - (NSEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(NSEdgeInsets)defaultMarginInset {
